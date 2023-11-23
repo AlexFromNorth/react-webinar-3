@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {createElement} from './utils.js';
 import './styles.css';
 
@@ -10,6 +10,7 @@ import './styles.css';
 function App({store}) {
 
   const list = store.getState().list;
+  const [activeList, setActiveList] = useState(undefined) 
 
   return (
     <div className='App'>
