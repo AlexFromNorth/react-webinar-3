@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { createElement } from "./utils.js";
+
+import ListEl from "./ListEl.js";
+
 import "./styles.css";
 
 /**
@@ -27,23 +30,11 @@ function App({ store }) {
           Добавить
         </button>
       </div>
+
       <div className="App-center">
         <div className="List">
           {list.map((item) => (
-            <div key={item.code} className="List-item">
-              <div
-                className={"Item" + (item.selected ? " Item_selected" : "")}
-                onClick={() => store.selectItem(item.code)}
-              >
-                <div className="Item-code">{item.code}</div>
-                <div className="Item-title">{item.title}</div>
-                <div className="Item-actions">
-                  <button onClick={() => store.deleteItem(item.code)}>
-                    Удалить
-                  </button>
-                </div>
-              </div>
-            </div>
+            <ListEl key={item.code} item={item} store={store} />
           ))}
         </div>
       </div>
