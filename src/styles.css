@@ -4,7 +4,9 @@ body {
   background: #535353;
   font-family: sans-serif;
 }
-
+*{
+  user-select: none;
+}
 .App {
   max-width: 1024px;
   min-height: 100vh;
