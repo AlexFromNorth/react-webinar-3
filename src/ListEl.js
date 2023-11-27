@@ -34,7 +34,10 @@ const ListEl = ({ item, store }) => {
           {item.title} {numberActive > 0 ? 'Выделяли ' + resultCountNumber : false}
         </div>-
         <div className="Item-actions">
-          <button onClick={() => store.deleteItem(item.code)}>Удалить</button>
+          <button onClick={(e) =>{ 
+            e.stopPropagation()
+            store.deleteItem(item.code)
+            }}>Удалить</button>
         </div>
       </div>
     </div>
